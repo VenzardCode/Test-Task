@@ -1,0 +1,84 @@
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
+
+#wrapper>div:nth-child(4n+1)>img {
+    border-color: red;
+}
+
+.img {
+    width: 80%;
+    border-radius: 50%;
+    box-shadow: 0 0 7px #666;
+    border: darkgray solid 5px;
+    cursor: pointer;
+}
+
+.img:hover {
+    border-color: yellow !important;
+    transform: rotate(45deg);
+}
+
+#modalClose {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#modalClose:hover,
+#modalClose:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modalСontent {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.delete {
+    cursor: pointer;
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    #wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #wrapper>div:nth-child(2n+1)>img {
+        border-color: red;
+    }
+}
+
+@media (max-width: 500px) {
+    #wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #wrapper>div:nth-child(1n+1)>img {
+        border-color: red;
+    }
+}
